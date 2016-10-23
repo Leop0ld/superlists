@@ -1,0 +1,8 @@
+# for Mac
+.DS_Store
+
+# for Autoenv
+.env
+
+# for IDE setting files
+.idea/
