@@ -6,3 +6,12 @@
 
 # for IDE setting files
 .idea/
+
+# Python cache files
+__pycache__
+
+# log files
+*.log
+
+# Database
+db.sqlite3
