@@ -2,4 +2,4 @@ from django import forms
 
 
 class ItemForm(forms.Form):
-    content = forms.CharField(max_length=100)
+    text = forms.CharField(max_length=100)

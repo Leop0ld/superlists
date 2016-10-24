@@ -7,6 +7,8 @@ from django.test import TestCase
 
 from lists.models import Item
 from lists.views import home_page
+from lists.forms import ItemForm
+from lists.apps import ListsConfig
 
 
 class ItemTest(TestCase):
@@ -27,6 +29,15 @@ class ItemTest(TestCase):
         second_saved_item = saved_items[1]
         self.assertEqual(first_saved_item.text, '첫 번째 아이템')
         self.assertEqual(second_saved_item.text, '두 번째 아이템')
+
+    def test_forms(self):
+        form_data = {'text': 'something'}
+        form = ItemForm(data=form_data)
+        self.assertTrue(form.is_valid())
+
+    def test_apps(self):
+        app_name = ListsConfig.name
+        self.assertIn('lists', app_name)
 
 
 class HomePageTest(TestCase):
